@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<inherited BaseReport="EnteteEtat.frx" ScriptLanguage="CSharp" ReportInfo.Created="07/28/2019 17:50:54" ReportInfo.Modified="09/23/2019 09:20:59" ReportInfo.CreatorVersion="2015.2.0.0">
+  <Dictionary/>
+  <inherited Name="Page1">
+    <inherited Name="ReportTitle1">
+      <inherited Name="Text1"/>
+      <inherited Name="Picture1" Left="0" Top="0"/>
+      <inherited Name="Text2"/>
+    </inherited>
+    <PageHeaderBand Name="PageHeader1" ZOrder="-1" Top="145.08" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Left="-9.45" Width="727.65" Height="28.35" Text="[ParamTitre]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="176.77" Width="718.2" Height="15.12">
+      <TextObject Name="Text7" Left="198.45" Width="113.4" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Voyage" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text10" Left="415.8" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Montant" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="311.85" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Type dépense" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" ZOrder="0" Top="195.22" Width="718.2" Height="15.12">
+      <TextObject Name="Text6" Left="311.85" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstData.Designation]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text4" Left="198.45" Width="113.4" Height="15.12" Border.Lines="All" Text="[LstData.UnVoyage]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="415.8" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstData.Montant]" HorzAlign="Center" Font="Arial, 8pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" ZOrder="-1" Top="213.67" Width="718.2" Height="18.9">
+      <TextObject Name="Text16" Left="576.45" Width="141.75" Height="18.9" Text="[Date]" HorzAlign="Center" Font="Arial, 7pt"/>
+    </PageFooterBand>
+  </inherited>
+</inherited>

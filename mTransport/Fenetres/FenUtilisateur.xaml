@@ -1,0 +1,57 @@
+﻿<Window x:Class="mTransport.Fenetres.FenUtilisateur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mTransport.Fenetres"
+        mc:Ignorable="d"
+        Title="mTransport" Tag="EE6F53F6-E3A8-455A-8DB2-E94E3F48E458" Height="561" Width="744" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+    <Grid Margin="0,0,2,27">
+        <Label Content="Utilisateur" Background="DarkGoldenrod" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="734"/>
+        <Label Content="Pseudo" HorizontalAlignment="Left" Height="25" Margin="21,31,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="21,56,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Prenoms" HorizontalAlignment="Left" Height="25" Margin="21,81,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Height="25" Margin="21,106,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="BP" HorizontalAlignment="Left" Height="25" Margin="21,133,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Email" HorizontalAlignment="Left" Height="25" Margin="21,161,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Mot de passe" HorizontalAlignment="Left" Height="25" Margin="21,188,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Confirmation mot de passe" HorizontalAlignment="Left" Height="25" Margin="21,219,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="Expiration mot de passe" HorizontalAlignment="Left" Height="25" Margin="21,247,0,0" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="txtPseudo" HorizontalAlignment="Left" Height="23" Margin="197,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="txtNomUtilisateur" HorizontalAlignment="Left" Height="23" Margin="197,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="txtPrenomsUtilisateur" HorizontalAlignment="Left" Height="23" Margin="197,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="197,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="txtBp" HorizontalAlignment="Left" Height="23" Margin="197,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="197,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="25" Margin="197,189,0,0" VerticalAlignment="Top" Width="206"/>
+        <PasswordBox x:Name="txtPasswordComfirmed" HorizontalAlignment="Left" Height="25" Margin="197,217,0,0" VerticalAlignment="Top" Width="206"/>
+        <DatePicker x:Name="txtDateExpiration" HorizontalAlignment="Left" Height="25" Margin="197,246,0,0" Text="" VerticalAlignment="Top" Width="206"/>
+        <CheckBox x:Name="chkSuperUser" Content="Est super user" HorizontalAlignment="Left" Margin="197,275,0,0" VerticalAlignment="Top" Width="206"/>
+        <CheckBox x:Name="chkActif" Content="Est actif" HorizontalAlignment="Left" Margin="197,293,0,0" VerticalAlignment="Top" Width="206"/>
+        <CheckBox x:Name="chkmdp" Content="Changer mot de passe" HorizontalAlignment="Left" Margin="408,194,0,0" VerticalAlignment="Top" Width="142" Click="Chkmdp_Click"/>
+        <Image x:Name="txtPhoto" HorizontalAlignment="Left" Height="97" Margin="482,34,0,0" VerticalAlignment="Top" Width="97" />
+        <Button x:Name="BtnNouveau" Tag="Nouveau" IsEnabled="False" Content="Nouveau" HorizontalAlignment="Left" Height="20" Margin="644,29,0,0" VerticalAlignment="Top" Width="80" Click="BtnNouveau_Click" />
+        <Button x:Name="BtnValider" Content="Valider" HorizontalAlignment="Left" Height="20" Margin="644,51,0,0" VerticalAlignment="Top" Width="80"  Click="BtnValider_Click"/>
+        <Button x:Name="BtnModifier" Content="Modifier" HorizontalAlignment="Left" Height="20" Margin="644,73,0,0" VerticalAlignment="Top" Width="80" Click="BtnModifier_Click"  />
+        <Button x:Name="BtnAnnuler" Content="Annuler" HorizontalAlignment="Left" Height="20" Margin="644,95,0,0" VerticalAlignment="Top" Width="80"  Click="BtnAnnuler_Click"/>
+        <Button x:Name="BtnSupprimer" Tag="Supprimer" IsEnabled="False" Content="Supprimer" HorizontalAlignment="Left" Height="20" Margin="644,117,0,0" VerticalAlignment="Top" Width="80" Click="BtnSupprimer_Click" />
+        <Button x:Name="BtnImprimer"  Content="Imprimer" HorizontalAlignment="Left" Height="20" Margin="644,139,0,0" VerticalAlignment="Top" Width="80" Click="BtnImprimer_Click"/>
+        <Label Content="" Background="DarkGray" HorizontalAlignment="Left" Height="25" Margin="0,506,0,-28" VerticalAlignment="Top" Width="733"/>
+        <DataGrid x:Name="TabUtilisateur" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Height="180" Margin="5,313,0,0" VerticalAlignment="Top" Width="719" SelectionChanged="TabUtilisateur_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Pseudonyme" Width="*" Binding="{Binding Pseudo}"/>
+                <DataGridTextColumn Header="Nom" Width="*" Binding="{Binding NomUtilisateur}"/>
+                <DataGridTextColumn Header="Prenoms" Width="*" Binding="{Binding PrenomUtilisateur}"/>
+                <DataGridTextColumn Header="Téléphone" Width="*" Binding="{Binding Telephone}"/>
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Est admin?" Width="*" Binding="{Binding EstSuperutilisateur}"/>
+                <DataGridTextColumn Header="Actif" Width="*" Binding="{Binding Estactif}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="480,32,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="BtnChargerImage"  Content="+" HorizontalAlignment="Left" Height="20" Margin="544,139,0,0" VerticalAlignment="Top" Width="36" Click="BtnChargerImage_Click"/>
+        <Button x:Name="BtnSupprimerImage"  Content="-" HorizontalAlignment="Left" Height="20" Margin="480,139,0,0" VerticalAlignment="Top" Width="36" Click="BtnSupprimerImage_Click"/>
+
+
+    </Grid>
+</Window>

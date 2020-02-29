@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mtransportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AffectationVehicule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVehicule" Type="int" Nullable="false" />
+    <Property Name="IdChauffeur" Type="int" Nullable="false" />
+    <Property Name="DateDebutAffectation" Type="datetime" Nullable="false" />
+    <Property Name="DateFinAffectation" Type="datetime" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BenneEngins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Matricule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marque" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AnneeAchat" Type="int" />
+    <Property Name="Capacite" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IdTypeBenne" Type="int" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chauffeur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Matricule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomChauffeur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrenomChauffeur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdresseChauffeur" Type="varchar" MaxLength="255" />
+    <Property Name="Telephone1Chauffeur" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Telephone2Chauffeur" Type="varchar" MaxLength="25" />
+    <Property Name="PhotoChauffeur" Type="text" />
+    <Property Name="DateEmbauche" Type="datetime" />
+    <Property Name="PersonneAPrevenir" Type="text" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Depense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Montant" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdTypeDepense" Type="int" Nullable="false" />
+    <Property Name="IdVoyage" Type="int" />
+    <Property Name="IdHistoriquePanne" Type="int" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetailsDroitAcces">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMenu" Type="int" Nullable="false" />
+    <Property Name="IdDroidAcces" Type="int" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DroitAcces">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProfil" Type="int" Nullable="false" />
+    <Property Name="IdFormulaire" Type="int" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Formulaire">
+    <Key>
+      <PropertyRef Name="IdFormulaire" />
+    </Key>
+    <Property Name="IdFormulaire" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomFormulaire" Type="varchar" MaxLength="255" />
+    <Property Name="TagFormulaire" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistoriquePanne">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IdVehicule" Type="int" Nullable="false" />
+    <Property Name="IdMateriel" Type="int" />
+    <Property Name="DateReparation" Type="datetime" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="journal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datejournal" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="evenement" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idutilisateur" Type="int" />
+  </EntityType>
+  <EntityType Name="Materiel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QteStock" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Etat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DatePeremption" Type="datetime" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="IdMenu" />
+    </Key>
+    <Property Name="IdMenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagMenu" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IdFormulaire" Type="int" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RaisonSociale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomSociete" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Adresse" Type="text" />
+    <Property Name="BoitePostale" Type="varchar" MaxLength="25" />
+    <Property Name="Quartier" Type="varchar" MaxLength="100" />
+    <Property Name="Ville" Type="varchar" MaxLength="50" />
+    <Property Name="Pays" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone1" Type="varchar" MaxLength="20" />
+    <Property Name="Telephone2" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Siteweb" Type="varchar" MaxLength="150" />
+    <Property Name="NomDirecteur" Type="varchar" MaxLength="255" />
+    <Property Name="PrenomDirecteur" Type="varchar" MaxLength="255" />
+    <Property Name="SignatureDirecteur" Type="text" />
+    <Property Name="Logo" Type="text" />
+  </EntityType>
+  <EntityType Name="TeteEngins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Matricule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marque" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Modele" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoChassis" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="AnneeAchat" Type="int" />
+    <Property Name="NbrePlaces" Type="int" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeBenneEngins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeDepense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pseudo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NomUtilisateur" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PrenomUtilisateur" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="25" />
+    <Property Name="BP" Type="varchar" MaxLength="25" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="MotDePasse" Type="varchar" MaxLength="2048" Nullable="false" />
+    <Property Name="EstSuperutilisateur" Type="bit" Nullable="false" />
+    <Property Name="Estactif" Type="bit" Nullable="false" />
+    <Property Name="IdProfil" Type="int" />
+    <Property Name="photo" Type="text" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+    <Property Name="DateExpirationPassword" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Vehicule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+    <Property Name="IdBenneEngins" Type="int" />
+    <Property Name="IdTeteEngins" Type="int" />
+  </EntityType>
+  <EntityType Name="Voyage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Depart" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DateDepartPrevue" Type="datetime" Nullable="false" />
+    <Property Name="DateArriveePrevue" Type="datetime" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IdVehicule" Type="int" />
+    <Property Name="Supprime" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_BenneEngins">
+    <End Role="BenneEngins" Type="Self.BenneEngins" Multiplicity="0..1" />
+    <End Role="Vehicule" Type="Self.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenneEngins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicule">
+        <PropertyRef Name="IdBenneEngins" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ChauffeurAffectation">
+    <End Role="Chauffeur" Type="Self.Chauffeur" Multiplicity="1" />
+    <End Role="AffectationVehicule" Type="Self.AffectationVehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chauffeur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AffectationVehicule">
+        <PropertyRef Name="IdChauffeur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Depense_HistoriquePanne">
+    <End Role="HistoriquePanne" Type="Self.HistoriquePanne" Multiplicity="0..1" />
+    <End Role="Depense" Type="Self.Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistoriquePanne">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdHistoriquePanne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Depense_Voyage">
+    <End Role="Voyage" Type="Self.Voyage" Multiplicity="0..1" />
+    <End Role="Depense" Type="Self.Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voyage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdVoyage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetailsDroitAcces_DroitAcces">
+    <End Role="DroitAcces" Type="Self.DroitAcces" Multiplicity="1" />
+    <End Role="DetailsDroitAcces" Type="Self.DetailsDroitAcces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DroitAcces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetailsDroitAcces">
+        <PropertyRef Name="IdDroidAcces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetailsDroitAcces_menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="DetailsDroitAcces" Type="Self.DetailsDroitAcces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="IdMenu" />
+      </Principal>
+      <Dependent Role="DetailsDroitAcces">
+        <PropertyRef Name="IdMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DroitAcces_Formulaire">
+    <End Role="Formulaire" Type="Self.Formulaire" Multiplicity="1" />
+    <End Role="DroitAcces" Type="Self.DroitAcces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formulaire">
+        <PropertyRef Name="IdFormulaire" />
+      </Principal>
+      <Dependent Role="DroitAcces">
+        <PropertyRef Name="IdFormulaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DroitAcces_Profil">
+    <End Role="Profil" Type="Self.Profil" Multiplicity="1" />
+    <End Role="DroitAcces" Type="Self.DroitAcces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DroitAcces">
+        <PropertyRef Name="IdProfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_journal_utilisateur">
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+    <End Role="journal" Type="Self.journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="journal">
+        <PropertyRef Name="idutilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Materiel">
+    <End Role="Materiel" Type="Self.Materiel" Multiplicity="0..1" />
+    <End Role="HistoriquePanne" Type="Self.HistoriquePanne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materiel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HistoriquePanne">
+        <PropertyRef Name="IdMateriel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_menu_fomulaire">
+    <End Role="Formulaire" Type="Self.Formulaire" Multiplicity="1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formulaire">
+        <PropertyRef Name="IdFormulaire" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="IdFormulaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Profil_Utilsateur">
+    <End Role="Profil" Type="Self.Profil" Multiplicity="0..1" />
+    <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utilisateur">
+        <PropertyRef Name="IdProfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TeteEngins">
+    <End Role="TeteEngins" Type="Self.TeteEngins" Multiplicity="0..1" />
+    <End Role="Vehicule" Type="Self.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeteEngins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicule">
+        <PropertyRef Name="IdTeteEngins" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TypeBenneEngins">
+    <End Role="TypeBenneEngins" Type="Self.TypeBenneEngins" Multiplicity="0..1" />
+    <End Role="BenneEngins" Type="Self.BenneEngins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeBenneEngins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BenneEngins">
+        <PropertyRef Name="IdTypeBenne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehiculeAffectation">
+    <End Role="Vehicule" Type="Self.Vehicule" Multiplicity="1" />
+    <End Role="AffectationVehicule" Type="Self.AffectationVehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AffectationVehicule">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Voyage_Vehicule">
+    <End Role="Vehicule" Type="Self.Vehicule" Multiplicity="0..1" />
+    <End Role="Voyage" Type="Self.Voyage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voyage">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkTypeDepense_Depense">
+    <End Role="TypeDepense" Type="Self.TypeDepense" Multiplicity="1" />
+    <End Role="Depense" Type="Self.Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeDepense">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdTypeDepense" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mtransportModelStoreContainer">
+    <EntitySet Name="AffectationVehicule" EntityType="Self.AffectationVehicule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenneEngins" EntityType="Self.BenneEngins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chauffeur" EntityType="Self.Chauffeur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Depense" EntityType="Self.Depense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetailsDroitAcces" EntityType="Self.DetailsDroitAcces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DroitAcces" EntityType="Self.DroitAcces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Formulaire" EntityType="Self.Formulaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoriquePanne" EntityType="Self.HistoriquePanne" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="journal" EntityType="Self.journal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Materiel" EntityType="Self.Materiel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profil" EntityType="Self.Profil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RaisonSociale" EntityType="Self.RaisonSociale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeteEngins" EntityType="Self.TeteEngins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeBenneEngins" EntityType="Self.TypeBenneEngins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeDepense" EntityType="Self.TypeDepense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicule" EntityType="Self.Vehicule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voyage" EntityType="Self.Voyage" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_BenneEngins" Association="Self.fk_BenneEngins">
+      <End Role="BenneEngins" EntitySet="BenneEngins" />
+      <End Role="Vehicule" EntitySet="Vehicule" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ChauffeurAffectation" Association="Self.fk_ChauffeurAffectation">
+      <End Role="Chauffeur" EntitySet="Chauffeur" />
+      <End Role="AffectationVehicule" EntitySet="AffectationVehicule" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Depense_HistoriquePanne" Association="Self.fk_Depense_HistoriquePanne">
+      <End Role="HistoriquePanne" EntitySet="HistoriquePanne" />
+      <End Role="Depense" EntitySet="Depense" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Depense_Voyage" Association="Self.fk_Depense_Voyage">
+      <End Role="Voyage" EntitySet="Voyage" />
+      <End Role="Depense" EntitySet="Depense" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetailsDroitAcces_DroitAcces" Association="Self.fk_DetailsDroitAcces_DroitAcces">
+      <End Role="DroitAcces" EntitySet="DroitAcces" />
+      <End Role="DetailsDroitAcces" EntitySet="DetailsDroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetailsDroitAcces_menu" Association="Self.fk_DetailsDroitAcces_menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="DetailsDroitAcces" EntitySet="DetailsDroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DroitAcces_Formulaire" Association="Self.fk_DroitAcces_Formulaire">
+      <End Role="Formulaire" EntitySet="Formulaire" />
+      <End Role="DroitAcces" EntitySet="DroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DroitAcces_Profil" Association="Self.fk_DroitAcces_Profil">
+      <End Role="Profil" EntitySet="Profil" />
+      <End Role="DroitAcces" EntitySet="DroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_journal_utilisateur" Association="Self.FK_journal_utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+      <End Role="journal" EntitySet="journal" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Materiel" Association="Self.fk_Materiel">
+      <End Role="Materiel" EntitySet="Materiel" />
+      <End Role="HistoriquePanne" EntitySet="HistoriquePanne" />
+    </AssociationSet>
+    <AssociationSet Name="fk_menu_fomulaire" Association="Self.fk_menu_fomulaire">
+      <End Role="Formulaire" EntitySet="Formulaire" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Profil_Utilsateur" Association="Self.fk_Profil_Utilsateur">
+      <End Role="Profil" EntitySet="Profil" />
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TeteEngins" Association="Self.fk_TeteEngins">
+      <End Role="TeteEngins" EntitySet="TeteEngins" />
+      <End Role="Vehicule" EntitySet="Vehicule" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TypeBenneEngins" Association="Self.fk_TypeBenneEngins">
+      <End Role="TypeBenneEngins" EntitySet="TypeBenneEngins" />
+      <End Role="BenneEngins" EntitySet="BenneEngins" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehiculeAffectation" Association="Self.fk_VehiculeAffectation">
+      <End Role="Vehicule" EntitySet="Vehicule" />
+      <End Role="AffectationVehicule" EntitySet="AffectationVehicule" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Voyage_Vehicule" Association="Self.fk_Voyage_Vehicule">
+      <End Role="Vehicule" EntitySet="Vehicule" />
+      <End Role="Voyage" EntitySet="Voyage" />
+    </AssociationSet>
+    <AssociationSet Name="fkTypeDepense_Depense" Association="Self.fkTypeDepense_Depense">
+      <End Role="TypeDepense" EntitySet="TypeDepense" />
+      <End Role="Depense" EntitySet="Depense" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

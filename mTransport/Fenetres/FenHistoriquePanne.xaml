@@ -1,0 +1,42 @@
+﻿<Window x:Class="mTransport.Fenetres.FenHistoriquePanne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mTransport.Fenetres"
+        mc:Ignorable="d"
+        Title="mTransport" Height="410.9" Width="506" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,-1,-6,0" Height="385" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="499*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Historique des pannes" FontWeight="Bold" Foreground="White" Background="DarkGoldenrod" Height="25" VerticalAlignment="Top"/>
+        <Label Content="Véhicule" HorizontalAlignment="Left" Height="25" Margin="23,35,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Matériel" HorizontalAlignment="Left" Height="25" Margin="23,63,0,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.431,0.32"/>
+        <Label Content="Date réparation" HorizontalAlignment="Left" Height="25" Margin="23,89,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="25" Margin="23,114,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="BtnNouveau" Content="Nouveau" HorizontalAlignment="Left" Height="20" Margin="394,30,0,0" VerticalAlignment="Top" Width="80" Click="BtnNouveau_Click" />
+        <Button x:Name="BtnValider" Content="Valider" HorizontalAlignment="Left" Height="20" Margin="394,52,0,0" VerticalAlignment="Top" Width="80" Click="BtnValider_Click"/>
+        <Button x:Name="BtnModifier" Content="Modifier" HorizontalAlignment="Left" Height="20" Margin="394,74,0,0" VerticalAlignment="Top" Width="80" Click="BtnModifier_Click"/>
+        <Button x:Name="BtnAnnuler" Content="Annuler" HorizontalAlignment="Left" Height="20" Margin="394,96,0,0" VerticalAlignment="Top" Width="80" Click="BtnAnnuler_Click"/>
+        <Button x:Name="BtnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="20" Margin="394,118,0,0" VerticalAlignment="Top" Width="80" Click="BtnSupprimer_Click"/>
+        <Button x:Name="BtnImprimer"  Content="Imprimer" HorizontalAlignment="Left" Height="20" Margin="394,140,0,0" VerticalAlignment="Top" Width="80" Click="BtnImprimer_Click"/>
+        <Label Content="" Background="DarkGray" HorizontalAlignment="Left" Margin="0,358,0,0" VerticalAlignment="Top" Width="499" Height="25"/>
+        <ComboBox x:Name="cmbVehicule" HorizontalAlignment="Left" Margin="171,36,0,0" VerticalAlignment="Top" Width="181" SelectedValue="Id" DisplayMemberPath="Libelle"/>
+        <ComboBox x:Name="cmbMateriel" HorizontalAlignment="Left" Margin="171,61,0,0" VerticalAlignment="Top" Width="181" SelectedValue="Id" DisplayMemberPath="Libelle"/>
+        <DatePicker x:Name="txtDateReparation" HorizontalAlignment="Left" Margin="171,86,0,0" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="46" Margin="171,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <DataGrid x:Name="TabHistorique" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" Height="155" Margin="5,198,0,0" VerticalAlignment="Top" Width="490">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="N°" Width="30" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Véhicule" Width="*" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Matériel" Width="*" Binding="{Binding Marque}"/>
+                <DataGridTextColumn Header="Date réparation" Width="*" Binding="{Binding Capacite}"/>
+                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding AnneeAchat}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

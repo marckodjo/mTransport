@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14870B54-F25B-42A7-ABAC-5459A5BB95BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>mTransport</RootNamespace>
+    <AssemblyName>mTransport</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Service, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.VSDesign, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.VSDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll FastReport\FastReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Fenetres\FenDepensePanne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenDepenseVoyage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenUtilisateur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenRaisonSociale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenChauffeur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenHistoriquePanne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenBenneEngin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\FenMateriel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\FenTeteEngin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\FenTypeBenneEngin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenConnexion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenTypeDepense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\FenAffectationVehicule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fenetres\FenVehicule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\FenVoyage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Fenetres\InputDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fenetres\FenDepensePanne.xaml.cs">
+      <DependentUpon>FenDepensePanne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenDepenseVoyage.xaml.cs">
+      <DependentUpon>FenDepenseVoyage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenUtilisateur.xaml.cs">
+      <DependentUpon>FenUtilisateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenRaisonSociale.xaml.cs">
+      <DependentUpon>FenRaisonSociale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenChauffeur.xaml.cs">
+      <DependentUpon>FenChauffeur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenHistoriquePanne.xaml.cs">
+      <DependentUpon>FenHistoriquePanne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenBenneEngin.xaml.cs">
+      <DependentUpon>FenBenneEngin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenMateriel.xaml.cs">
+      <DependentUpon>FenMateriel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenTeteEngin.xaml.cs">
+      <DependentUpon>FenTeteEngin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenTypeBenneEngin.xaml.cs">
+      <DependentUpon>FenTypeBenneEngin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenConnexion.xaml.cs">
+      <DependentUpon>FenConnexion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenTypeDepense.xaml.cs">
+      <DependentUpon>FenTypeDepense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenAffectationVehicule.xaml.cs">
+      <DependentUpon>FenAffectationVehicule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenVehicule.xaml.cs">
+      <DependentUpon>FenVehicule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\FenVoyage.xaml.cs">
+      <DependentUpon>FenVoyage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Librairie\Outils.cs" />
+    <Compile Include="Methodes\TypeDepenseSuite.cs" />
+    <Compile Include="Librairie\Hex.cs" />
+    <Compile Include="Librairie\ImageConverter.cs" />
+    <Compile Include="Librairie\LoadCombo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Methodes\BenneEnginSuite.cs" />
+    <Compile Include="Methodes\AffectationVehiculeSuite.cs" />
+    <Compile Include="Methodes\DepenseSuite.cs" />
+    <Compile Include="Methodes\HistoriquePanneSuite.cs" />
+    <Compile Include="Methodes\MaterielSuite.cs" />
+    <Compile Include="Methodes\RaisonSocialeSuite.cs" />
+    <Compile Include="Methodes\UtilisateurSuite.cs" />
+    <Compile Include="Methodes\VoyageSuite.cs" />
+    <Compile Include="Methodes\VehiculeSuite.cs" />
+    <Compile Include="Methodes\TeteEnginSuite.cs" />
+    <Compile Include="Methodes\TypeBenneEnginSuite.cs" />
+    <Compile Include="Methodes\ChauffeurSuite.cs" />
+    <Compile Include="Methodes\ICRUD.cs" />
+    <Compile Include="Models\AffectationVehicule.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BenneEngin.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chauffeur.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Depense.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetailsDroitAcce.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DroitAcce.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Formulaire.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistoriquePanne.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\journal.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Materiel.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menu.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model_mTransport.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_mTransport.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model_mTransport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model_mTransport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_mTransport.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Profil.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RaisonSociale.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeteEngin.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeBenneEngin.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeDepense.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Utilisateur.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vehicule.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Voyage.cs">
+      <DependentUpon>Model_mTransport.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Models\Model_mTransport.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_mTransport.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Model_mTransport.edmx.diagram">
+      <DependentUpon>Model_mTransport.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\EnteteEtat.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\rptBenneEngins.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\rptChauffeurs.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\rptDepenses.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\rptDepensesVoyage.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\rptTeteEngins.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\rptTeteEngins_New.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+    <Content Include="Models\Model_mTransport.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model_mTransport.Context.cs</LastGenOutput>
+      <DependentUpon>Model_mTransport.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model_mTransport.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_mTransport.edmx</DependentUpon>
+      <LastGenOutput>Model_mTransport.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

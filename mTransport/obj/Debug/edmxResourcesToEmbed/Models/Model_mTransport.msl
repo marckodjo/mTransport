@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mtransportModelStoreContainer" CdmEntityContainer="DB">
+    <EntitySetMapping Name="AffectationVehicules">
+      <EntityTypeMapping TypeName="mtransportModel.AffectationVehicule">
+        <MappingFragment StoreEntitySet="AffectationVehicule">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="DateFinAffectation" ColumnName="DateFinAffectation" />
+          <ScalarProperty Name="DateDebutAffectation" ColumnName="DateDebutAffectation" />
+          <ScalarProperty Name="IdChauffeur" ColumnName="IdChauffeur" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenneEngins">
+      <EntityTypeMapping TypeName="mtransportModel.BenneEngin">
+        <MappingFragment StoreEntitySet="BenneEngins">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdTypeBenne" ColumnName="IdTypeBenne" />
+          <ScalarProperty Name="Capacite" ColumnName="Capacite" />
+          <ScalarProperty Name="AnneeAchat" ColumnName="AnneeAchat" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chauffeurs">
+      <EntityTypeMapping TypeName="mtransportModel.Chauffeur">
+        <MappingFragment StoreEntitySet="Chauffeur">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="PersonneAPrevenir" ColumnName="PersonneAPrevenir" />
+          <ScalarProperty Name="DateEmbauche" ColumnName="DateEmbauche" />
+          <ScalarProperty Name="PhotoChauffeur" ColumnName="PhotoChauffeur" />
+          <ScalarProperty Name="Telephone2Chauffeur" ColumnName="Telephone2Chauffeur" />
+          <ScalarProperty Name="Telephone1Chauffeur" ColumnName="Telephone1Chauffeur" />
+          <ScalarProperty Name="AdresseChauffeur" ColumnName="AdresseChauffeur" />
+          <ScalarProperty Name="PrenomChauffeur" ColumnName="PrenomChauffeur" />
+          <ScalarProperty Name="NomChauffeur" ColumnName="NomChauffeur" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depenses">
+      <EntityTypeMapping TypeName="mtransportModel.Depense">
+        <MappingFragment StoreEntitySet="Depense">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdHistoriquePanne" ColumnName="IdHistoriquePanne" />
+          <ScalarProperty Name="IdVoyage" ColumnName="IdVoyage" />
+          <ScalarProperty Name="IdTypeDepense" ColumnName="IdTypeDepense" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailsDroitAcces">
+      <EntityTypeMapping TypeName="mtransportModel.DetailsDroitAcce">
+        <MappingFragment StoreEntitySet="DetailsDroitAcces">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdDroidAcces" ColumnName="IdDroidAcces" />
+          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DroitAcces">
+      <EntityTypeMapping TypeName="mtransportModel.DroitAcce">
+        <MappingFragment StoreEntitySet="DroitAcces">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdFormulaire" ColumnName="IdFormulaire" />
+          <ScalarProperty Name="IdProfil" ColumnName="IdProfil" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formulaires">
+      <EntityTypeMapping TypeName="mtransportModel.Formulaire">
+        <MappingFragment StoreEntitySet="Formulaire">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TagFormulaire" ColumnName="TagFormulaire" />
+          <ScalarProperty Name="NomFormulaire" ColumnName="NomFormulaire" />
+          <ScalarProperty Name="IdFormulaire" ColumnName="IdFormulaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoriquePannes">
+      <EntityTypeMapping TypeName="mtransportModel.HistoriquePanne">
+        <MappingFragment StoreEntitySet="HistoriquePanne">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="DateReparation" ColumnName="DateReparation" />
+          <ScalarProperty Name="IdMateriel" ColumnName="IdMateriel" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="journals">
+      <EntityTypeMapping TypeName="mtransportModel.journal">
+        <MappingFragment StoreEntitySet="journal">
+          <ScalarProperty Name="idutilisateur" ColumnName="idutilisateur" />
+          <ScalarProperty Name="evenement" ColumnName="evenement" />
+          <ScalarProperty Name="datejournal" ColumnName="datejournal" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materiels">
+      <EntityTypeMapping TypeName="mtransportModel.Materiel">
+        <MappingFragment StoreEntitySet="Materiel">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="DatePeremption" ColumnName="DatePeremption" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+          <ScalarProperty Name="QteStock" ColumnName="QteStock" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="mtransportModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdFormulaire" ColumnName="IdFormulaire" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TagMenu" ColumnName="TagMenu" />
+          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profils">
+      <EntityTypeMapping TypeName="mtransportModel.Profil">
+        <MappingFragment StoreEntitySet="Profil">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RaisonSociales">
+      <EntityTypeMapping TypeName="mtransportModel.RaisonSociale">
+        <MappingFragment StoreEntitySet="RaisonSociale">
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="SignatureDirecteur" ColumnName="SignatureDirecteur" />
+          <ScalarProperty Name="PrenomDirecteur" ColumnName="PrenomDirecteur" />
+          <ScalarProperty Name="NomDirecteur" ColumnName="NomDirecteur" />
+          <ScalarProperty Name="Siteweb" ColumnName="Siteweb" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Quartier" ColumnName="Quartier" />
+          <ScalarProperty Name="BoitePostale" ColumnName="BoitePostale" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="NomSociete" ColumnName="NomSociete" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeteEngins">
+      <EntityTypeMapping TypeName="mtransportModel.TeteEngin">
+        <MappingFragment StoreEntitySet="TeteEngins">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="NbrePlaces" ColumnName="NbrePlaces" />
+          <ScalarProperty Name="AnneeAchat" ColumnName="AnneeAchat" />
+          <ScalarProperty Name="NoChassis" ColumnName="NoChassis" />
+          <ScalarProperty Name="Modele" ColumnName="Modele" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeBenneEngins">
+      <EntityTypeMapping TypeName="mtransportModel.TypeBenneEngin">
+        <MappingFragment StoreEntitySet="TypeBenneEngins">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeDepenses">
+      <EntityTypeMapping TypeName="mtransportModel.TypeDepense">
+        <MappingFragment StoreEntitySet="TypeDepense">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateurs">
+      <EntityTypeMapping TypeName="mtransportModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="DateExpirationPassword" ColumnName="DateExpirationPassword" />
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="IdProfil" ColumnName="IdProfil" />
+          <ScalarProperty Name="Estactif" ColumnName="Estactif" />
+          <ScalarProperty Name="EstSuperutilisateur" ColumnName="EstSuperutilisateur" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BP" ColumnName="BP" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="PrenomUtilisateur" ColumnName="PrenomUtilisateur" />
+          <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
+          <ScalarProperty Name="Pseudo" ColumnName="Pseudo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicules">
+      <EntityTypeMapping TypeName="mtransportModel.Vehicule">
+        <MappingFragment StoreEntitySet="Vehicule">
+          <ScalarProperty Name="IdTeteEngins" ColumnName="IdTeteEngins" />
+          <ScalarProperty Name="IdBenneEngins" ColumnName="IdBenneEngins" />
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voyages">
+      <EntityTypeMapping TypeName="mtransportModel.Voyage">
+        <MappingFragment StoreEntitySet="Voyage">
+          <ScalarProperty Name="Supprime" ColumnName="Supprime" />
+          <ScalarProperty Name="IdVehicule" ColumnName="IdVehicule" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateArriveePrevue" ColumnName="DateArriveePrevue" />
+          <ScalarProperty Name="DateDepartPrevue" ColumnName="DateDepartPrevue" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Depart" ColumnName="Depart" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

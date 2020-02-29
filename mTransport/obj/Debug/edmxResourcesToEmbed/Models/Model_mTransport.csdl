@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mtransportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AffectationVehicules" EntityType="mtransportModel.AffectationVehicule" />
+    <EntitySet Name="BenneEngins" EntityType="mtransportModel.BenneEngin" />
+    <EntitySet Name="Chauffeurs" EntityType="mtransportModel.Chauffeur" />
+    <EntitySet Name="Depenses" EntityType="mtransportModel.Depense" />
+    <EntitySet Name="DetailsDroitAcces" EntityType="mtransportModel.DetailsDroitAcce" />
+    <EntitySet Name="DroitAcces" EntityType="mtransportModel.DroitAcce" />
+    <EntitySet Name="Formulaires" EntityType="mtransportModel.Formulaire" />
+    <EntitySet Name="HistoriquePannes" EntityType="mtransportModel.HistoriquePanne" />
+    <EntitySet Name="journals" EntityType="mtransportModel.journal" />
+    <EntitySet Name="Materiels" EntityType="mtransportModel.Materiel" />
+    <EntitySet Name="Menus" EntityType="mtransportModel.Menu" />
+    <EntitySet Name="Profils" EntityType="mtransportModel.Profil" />
+    <EntitySet Name="RaisonSociales" EntityType="mtransportModel.RaisonSociale" />
+    <EntitySet Name="TeteEngins" EntityType="mtransportModel.TeteEngin" />
+    <EntitySet Name="TypeBenneEngins" EntityType="mtransportModel.TypeBenneEngin" />
+    <EntitySet Name="TypeDepenses" EntityType="mtransportModel.TypeDepense" />
+    <EntitySet Name="Utilisateurs" EntityType="mtransportModel.Utilisateur" />
+    <EntitySet Name="Vehicules" EntityType="mtransportModel.Vehicule" />
+    <EntitySet Name="Voyages" EntityType="mtransportModel.Voyage" />
+    <AssociationSet Name="fk_ChauffeurAffectation" Association="mtransportModel.fk_ChauffeurAffectation">
+      <End Role="Chauffeur" EntitySet="Chauffeurs" />
+      <End Role="AffectationVehicule" EntitySet="AffectationVehicules" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VehiculeAffectation" Association="mtransportModel.fk_VehiculeAffectation">
+      <End Role="Vehicule" EntitySet="Vehicules" />
+      <End Role="AffectationVehicule" EntitySet="AffectationVehicules" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BenneEngins" Association="mtransportModel.fk_BenneEngins">
+      <End Role="BenneEngin" EntitySet="BenneEngins" />
+      <End Role="Vehicule" EntitySet="Vehicules" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TypeBenneEngins" Association="mtransportModel.fk_TypeBenneEngins">
+      <End Role="TypeBenneEngin" EntitySet="TypeBenneEngins" />
+      <End Role="BenneEngin" EntitySet="BenneEngins" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Depense_HistoriquePanne" Association="mtransportModel.fk_Depense_HistoriquePanne">
+      <End Role="HistoriquePanne" EntitySet="HistoriquePannes" />
+      <End Role="Depense" EntitySet="Depenses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Depense_Voyage" Association="mtransportModel.fk_Depense_Voyage">
+      <End Role="Voyage" EntitySet="Voyages" />
+      <End Role="Depense" EntitySet="Depenses" />
+    </AssociationSet>
+    <AssociationSet Name="fkTypeDepense_Depense" Association="mtransportModel.fkTypeDepense_Depense">
+      <End Role="TypeDepense" EntitySet="TypeDepenses" />
+      <End Role="Depense" EntitySet="Depenses" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetailsDroitAcces_DroitAcces" Association="mtransportModel.fk_DetailsDroitAcces_DroitAcces">
+      <End Role="DroitAcce" EntitySet="DroitAcces" />
+      <End Role="DetailsDroitAcce" EntitySet="DetailsDroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetailsDroitAcces_menu" Association="mtransportModel.fk_DetailsDroitAcces_menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="DetailsDroitAcce" EntitySet="DetailsDroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DroitAcces_Formulaire" Association="mtransportModel.fk_DroitAcces_Formulaire">
+      <End Role="Formulaire" EntitySet="Formulaires" />
+      <End Role="DroitAcce" EntitySet="DroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DroitAcces_Profil" Association="mtransportModel.fk_DroitAcces_Profil">
+      <End Role="Profil" EntitySet="Profils" />
+      <End Role="DroitAcce" EntitySet="DroitAcces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_menu_fomulaire" Association="mtransportModel.fk_menu_fomulaire">
+      <End Role="Formulaire" EntitySet="Formulaires" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Materiel" Association="mtransportModel.fk_Materiel">
+      <End Role="Materiel" EntitySet="Materiels" />
+      <End Role="HistoriquePanne" EntitySet="HistoriquePannes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_journal_utilisateur" Association="mtransportModel.FK_journal_utilisateur">
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+      <End Role="journal" EntitySet="journals" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Profil_Utilsateur" Association="mtransportModel.fk_Profil_Utilsateur">
+      <End Role="Profil" EntitySet="Profils" />
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TeteEngins" Association="mtransportModel.fk_TeteEngins">
+      <End Role="TeteEngin" EntitySet="TeteEngins" />
+      <End Role="Vehicule" EntitySet="Vehicules" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Voyage_Vehicule" Association="mtransportModel.fk_Voyage_Vehicule">
+      <End Role="Vehicule" EntitySet="Vehicules" />
+      <End Role="Voyage" EntitySet="Voyages" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AffectationVehicule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" />
+    <Property Name="IdChauffeur" Type="Int32" Nullable="false" />
+    <Property Name="DateDebutAffectation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinAffectation" Type="DateTime" Precision="3" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Chauffeur" Relationship="mtransportModel.fk_ChauffeurAffectation" FromRole="AffectationVehicule" ToRole="Chauffeur" />
+    <NavigationProperty Name="Vehicule" Relationship="mtransportModel.fk_VehiculeAffectation" FromRole="AffectationVehicule" ToRole="Vehicule" />
+  </EntityType>
+  <EntityType Name="BenneEngin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matricule" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marque" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AnneeAchat" Type="Int32" />
+    <Property Name="Capacite" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdTypeBenne" Type="Int32" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Vehicules" Relationship="mtransportModel.fk_BenneEngins" FromRole="BenneEngin" ToRole="Vehicule" />
+    <NavigationProperty Name="TypeBenneEngin" Relationship="mtransportModel.fk_TypeBenneEngins" FromRole="BenneEngin" ToRole="TypeBenneEngin" />
+  </EntityType>
+  <EntityType Name="Chauffeur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matricule" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomChauffeur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrenomChauffeur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdresseChauffeur" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone1Chauffeur" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone2Chauffeur" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PhotoChauffeur" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateEmbauche" Type="DateTime" Precision="3" />
+    <Property Name="PersonneAPrevenir" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AffectationVehicules" Relationship="mtransportModel.fk_ChauffeurAffectation" FromRole="Chauffeur" ToRole="AffectationVehicule" />
+  </EntityType>
+  <EntityType Name="Depense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Montant" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IdTypeDepense" Type="Int32" Nullable="false" />
+    <Property Name="IdVoyage" Type="Int32" />
+    <Property Name="IdHistoriquePanne" Type="Int32" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="HistoriquePanne" Relationship="mtransportModel.fk_Depense_HistoriquePanne" FromRole="Depense" ToRole="HistoriquePanne" />
+    <NavigationProperty Name="Voyage" Relationship="mtransportModel.fk_Depense_Voyage" FromRole="Depense" ToRole="Voyage" />
+    <NavigationProperty Name="TypeDepense" Relationship="mtransportModel.fkTypeDepense_Depense" FromRole="Depense" ToRole="TypeDepense" />
+  </EntityType>
+  <EntityType Name="DetailsDroitAcce">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdMenu" Type="Int32" Nullable="false" />
+    <Property Name="IdDroidAcces" Type="Int32" Nullable="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DroitAcce" Relationship="mtransportModel.fk_DetailsDroitAcces_DroitAcces" FromRole="DetailsDroitAcce" ToRole="DroitAcce" />
+    <NavigationProperty Name="Menu" Relationship="mtransportModel.fk_DetailsDroitAcces_menu" FromRole="DetailsDroitAcce" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="DroitAcce">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProfil" Type="Int32" Nullable="false" />
+    <Property Name="IdFormulaire" Type="Int32" Nullable="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DetailsDroitAcces" Relationship="mtransportModel.fk_DetailsDroitAcces_DroitAcces" FromRole="DroitAcce" ToRole="DetailsDroitAcce" />
+    <NavigationProperty Name="Formulaire" Relationship="mtransportModel.fk_DroitAcces_Formulaire" FromRole="DroitAcce" ToRole="Formulaire" />
+    <NavigationProperty Name="Profil" Relationship="mtransportModel.fk_DroitAcces_Profil" FromRole="DroitAcce" ToRole="Profil" />
+  </EntityType>
+  <EntityType Name="Formulaire">
+    <Key>
+      <PropertyRef Name="IdFormulaire" />
+    </Key>
+    <Property Name="IdFormulaire" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomFormulaire" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TagFormulaire" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DroitAcces" Relationship="mtransportModel.fk_DroitAcces_Formulaire" FromRole="Formulaire" ToRole="DroitAcce" />
+    <NavigationProperty Name="Menus" Relationship="mtransportModel.fk_menu_fomulaire" FromRole="Formulaire" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="HistoriquePanne">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdVehicule" Type="Int32" Nullable="false" />
+    <Property Name="IdMateriel" Type="Int32" />
+    <Property Name="DateReparation" Type="DateTime" Precision="3" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Depenses" Relationship="mtransportModel.fk_Depense_HistoriquePanne" FromRole="HistoriquePanne" ToRole="Depense" />
+    <NavigationProperty Name="Materiel" Relationship="mtransportModel.fk_Materiel" FromRole="HistoriquePanne" ToRole="Materiel" />
+  </EntityType>
+  <EntityType Name="journal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datejournal" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="evenement" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="idutilisateur" Type="Int32" />
+    <NavigationProperty Name="Utilisateur" Relationship="mtransportModel.FK_journal_utilisateur" FromRole="journal" ToRole="Utilisateur" />
+  </EntityType>
+  <EntityType Name="Materiel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QteStock" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Etat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DatePeremption" Type="DateTime" Precision="3" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="HistoriquePannes" Relationship="mtransportModel.fk_Materiel" FromRole="Materiel" ToRole="HistoriquePanne" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="IdMenu" />
+    </Key>
+    <Property Name="IdMenu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagMenu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdFormulaire" Type="Int32" Nullable="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DetailsDroitAcces" Relationship="mtransportModel.fk_DetailsDroitAcces_menu" FromRole="Menu" ToRole="DetailsDroitAcce" />
+    <NavigationProperty Name="Formulaire" Relationship="mtransportModel.fk_menu_fomulaire" FromRole="Menu" ToRole="Formulaire" />
+  </EntityType>
+  <EntityType Name="Profil">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DroitAcces" Relationship="mtransportModel.fk_DroitAcces_Profil" FromRole="Profil" ToRole="DroitAcce" />
+    <NavigationProperty Name="Utilisateurs" Relationship="mtransportModel.fk_Profil_Utilsateur" FromRole="Profil" ToRole="Utilisateur" />
+  </EntityType>
+  <EntityType Name="RaisonSociale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomSociete" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BoitePostale" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Quartier" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pays" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Siteweb" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NomDirecteur" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrenomDirecteur" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SignatureDirecteur" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TeteEngin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matricule" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marque" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Modele" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoChassis" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AnneeAchat" Type="Int32" />
+    <Property Name="NbrePlaces" Type="Int32" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Vehicules" Relationship="mtransportModel.fk_TeteEngins" FromRole="TeteEngin" ToRole="Vehicule" />
+  </EntityType>
+  <EntityType Name="TypeBenneEngin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BenneEngins" Relationship="mtransportModel.fk_TypeBenneEngins" FromRole="TypeBenneEngin" ToRole="BenneEngin" />
+  </EntityType>
+  <EntityType Name="TypeDepense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Depenses" Relationship="mtransportModel.fkTypeDepense_Depense" FromRole="TypeDepense" ToRole="Depense" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pseudo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrenomUtilisateur" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="BP" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MotDePasse" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="EstSuperutilisateur" Type="Boolean" Nullable="false" />
+    <Property Name="Estactif" Type="Boolean" Nullable="false" />
+    <Property Name="IdProfil" Type="Int32" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <Property Name="DateExpirationPassword" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="journals" Relationship="mtransportModel.FK_journal_utilisateur" FromRole="Utilisateur" ToRole="journal" />
+    <NavigationProperty Name="Profil" Relationship="mtransportModel.fk_Profil_Utilsateur" FromRole="Utilisateur" ToRole="Profil" />
+  </EntityType>
+  <EntityType Name="Vehicule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <Property Name="IdBenneEngins" Type="Int32" />
+    <Property Name="IdTeteEngins" Type="Int32" />
+    <NavigationProperty Name="AffectationVehicules" Relationship="mtransportModel.fk_VehiculeAffectation" FromRole="Vehicule" ToRole="AffectationVehicule" />
+    <NavigationProperty Name="BenneEngin" Relationship="mtransportModel.fk_BenneEngins" FromRole="Vehicule" ToRole="BenneEngin" />
+    <NavigationProperty Name="TeteEngin" Relationship="mtransportModel.fk_TeteEngins" FromRole="Vehicule" ToRole="TeteEngin" />
+    <NavigationProperty Name="Voyages" Relationship="mtransportModel.fk_Voyage_Vehicule" FromRole="Vehicule" ToRole="Voyage" />
+  </EntityType>
+  <EntityType Name="Voyage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Depart" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Destination" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateDepartPrevue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateArriveePrevue" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdVehicule" Type="Int32" />
+    <Property Name="Supprime" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Depenses" Relationship="mtransportModel.fk_Depense_Voyage" FromRole="Voyage" ToRole="Depense" />
+    <NavigationProperty Name="Vehicule" Relationship="mtransportModel.fk_Voyage_Vehicule" FromRole="Voyage" ToRole="Vehicule" />
+  </EntityType>
+  <Association Name="fk_ChauffeurAffectation">
+    <End Type="mtransportModel.Chauffeur" Role="Chauffeur" Multiplicity="1" />
+    <End Type="mtransportModel.AffectationVehicule" Role="AffectationVehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chauffeur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AffectationVehicule">
+        <PropertyRef Name="IdChauffeur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VehiculeAffectation">
+    <End Type="mtransportModel.Vehicule" Role="Vehicule" Multiplicity="1" />
+    <End Type="mtransportModel.AffectationVehicule" Role="AffectationVehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AffectationVehicule">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BenneEngins">
+    <End Type="mtransportModel.BenneEngin" Role="BenneEngin" Multiplicity="0..1" />
+    <End Type="mtransportModel.Vehicule" Role="Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenneEngin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicule">
+        <PropertyRef Name="IdBenneEngins" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TypeBenneEngins">
+    <End Type="mtransportModel.TypeBenneEngin" Role="TypeBenneEngin" Multiplicity="0..1" />
+    <End Type="mtransportModel.BenneEngin" Role="BenneEngin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeBenneEngin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BenneEngin">
+        <PropertyRef Name="IdTypeBenne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Depense_HistoriquePanne">
+    <End Type="mtransportModel.HistoriquePanne" Role="HistoriquePanne" Multiplicity="0..1" />
+    <End Type="mtransportModel.Depense" Role="Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistoriquePanne">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdHistoriquePanne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Depense_Voyage">
+    <End Type="mtransportModel.Voyage" Role="Voyage" Multiplicity="0..1" />
+    <End Type="mtransportModel.Depense" Role="Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voyage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdVoyage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkTypeDepense_Depense">
+    <End Type="mtransportModel.TypeDepense" Role="TypeDepense" Multiplicity="1" />
+    <End Type="mtransportModel.Depense" Role="Depense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeDepense">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Depense">
+        <PropertyRef Name="IdTypeDepense" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetailsDroitAcces_DroitAcces">
+    <End Type="mtransportModel.DroitAcce" Role="DroitAcce" Multiplicity="1" />
+    <End Type="mtransportModel.DetailsDroitAcce" Role="DetailsDroitAcce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DroitAcce">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetailsDroitAcce">
+        <PropertyRef Name="IdDroidAcces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetailsDroitAcces_menu">
+    <End Type="mtransportModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="mtransportModel.DetailsDroitAcce" Role="DetailsDroitAcce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="IdMenu" />
+      </Principal>
+      <Dependent Role="DetailsDroitAcce">
+        <PropertyRef Name="IdMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DroitAcces_Formulaire">
+    <End Type="mtransportModel.Formulaire" Role="Formulaire" Multiplicity="1" />
+    <End Type="mtransportModel.DroitAcce" Role="DroitAcce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formulaire">
+        <PropertyRef Name="IdFormulaire" />
+      </Principal>
+      <Dependent Role="DroitAcce">
+        <PropertyRef Name="IdFormulaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DroitAcces_Profil">
+    <End Type="mtransportModel.Profil" Role="Profil" Multiplicity="1" />
+    <End Type="mtransportModel.DroitAcce" Role="DroitAcce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DroitAcce">
+        <PropertyRef Name="IdProfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_menu_fomulaire">
+    <End Type="mtransportModel.Formulaire" Role="Formulaire" Multiplicity="1" />
+    <End Type="mtransportModel.Menu" Role="Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formulaire">
+        <PropertyRef Name="IdFormulaire" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="IdFormulaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Materiel">
+    <End Type="mtransportModel.Materiel" Role="Materiel" Multiplicity="0..1" />
+    <End Type="mtransportModel.HistoriquePanne" Role="HistoriquePanne" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materiel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HistoriquePanne">
+        <PropertyRef Name="IdMateriel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_journal_utilisateur">
+    <End Type="mtransportModel.Utilisateur" Role="Utilisateur" Multiplicity="0..1" />
+    <End Type="mtransportModel.journal" Role="journal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="journal">
+        <PropertyRef Name="idutilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Profil_Utilsateur">
+    <End Type="mtransportModel.Profil" Role="Profil" Multiplicity="0..1" />
+    <End Type="mtransportModel.Utilisateur" Role="Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utilisateur">
+        <PropertyRef Name="IdProfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TeteEngins">
+    <End Type="mtransportModel.TeteEngin" Role="TeteEngin" Multiplicity="0..1" />
+    <End Type="mtransportModel.Vehicule" Role="Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TeteEngin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicule">
+        <PropertyRef Name="IdTeteEngins" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Voyage_Vehicule">
+    <End Type="mtransportModel.Vehicule" Role="Vehicule" Multiplicity="0..1" />
+    <End Type="mtransportModel.Voyage" Role="Voyage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voyage">
+        <PropertyRef Name="IdVehicule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="mTransport.Fenetres.FenVoyage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mTransport.Fenetres"
+        mc:Ignorable="d"
+        Title="mTransport" Height="480" Width="808" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Voyage" Background="DarkGoldenrod" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="802"/>
+        <Label Content="Désignation" HorizontalAlignment="Left" Margin="14,37,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Depart" HorizontalAlignment="Left" Margin="14,63,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Destination" HorizontalAlignment="Left" Margin="14,89,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Date départ prévue" HorizontalAlignment="Left" Margin="14,115,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Date arrivée prévue" HorizontalAlignment="Left" Margin="357,35,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="357,63,0,0" VerticalAlignment="Top" Width="135"/>
+        <Label Content="Vehicule" HorizontalAlignment="Left" Margin="357,115,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="txtDesignation" HorizontalAlignment="Left" Height="23" Margin="154,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtDepart" HorizontalAlignment="Left" Height="23" Margin="154,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtDestination" HorizontalAlignment="Left" Height="23" Margin="154,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <DatePicker x:Name="txtDateDepartPrevue" HorizontalAlignment="Left" Height="25" Margin="154,115,0,0"  Text="" VerticalAlignment="Top" Width="181"/>
+        <DatePicker x:Name="txtDateArriveePrevue" HorizontalAlignment="Left" Height="25" Margin="497,36,0,0"  Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="52" Margin="497,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <ComboBox x:Name="cmbVehicule" DisplayMemberPath="Libelle" SelectedValue="Id" HorizontalAlignment="Left" Margin="497,119,0,0" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="BtnNouveau" Content="Nouveau" HorizontalAlignment="Left" Height="20" Margin="703,30,0,0" VerticalAlignment="Top" Width="80" Click="BtnNouveau_Click"/>
+        <Button x:Name="BtnValider" Content="Valider" HorizontalAlignment="Left" Height="20" Margin="703,51,0,0" VerticalAlignment="Top" Width="80" Click="BtnValider_Click"/>
+        <Button x:Name="BtnModifier" Content="Modifier" HorizontalAlignment="Left" Height="20" Margin="703,72,0,0" VerticalAlignment="Top" Width="80" Click="BtnModifier_Click"/>
+        <Button x:Name="BtnAnnuler" Content="Annuler" HorizontalAlignment="Left" Height="20" Margin="703,93,0,0" VerticalAlignment="Top" Width="80" Click="BtnAnnuler_Click"/>
+        <Button x:Name="BtnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="20" Margin="703,114,0,0" VerticalAlignment="Top" Width="80" Click="BtnSupprimer_Click"/>
+        <Button x:Name="BtnImprimer"  Content="Imprimer" HorizontalAlignment="Left" Height="20" Margin="703,135,0,0" VerticalAlignment="Top" Width="80"/>
+        <DataGrid x:Name="TabVoyage" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"  HorizontalAlignment="Left" Height="210" Margin="10,185,0,0" VerticalAlignment="Top" Width="773" SelectionChanged="TabVoyage_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="N°" Width="30" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Designation" Width="*" Binding="{Binding Designation}" />
+                <DataGridTextColumn Header="Depart" Width="*" Binding="{Binding Depart}" />
+                <DataGridTextColumn Header="Destination" Width="*" Binding="{Binding Destination}" />
+                <DataGridTextColumn Header="Date départ prévue" Width="*" Binding="{Binding DateDepartPrevue, StringFormat='dd/MM/yyyy'}" />
+                <DataGridTextColumn Header="Date arrivée prévue" Width="*" Binding="{Binding DateArriveePrevue, StringFormat='dd/MM/yyyy'}" />
+                <!--<DataGridTextColumn Header="Description" Width="*" Binding="{Binding Description}" />-->
+                <DataGridTextColumn Header="Vehicule" Width="*" Binding="{Binding Vehicule.Libelle}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Dépense" x:Name="BtnDepenseVoyage" HorizontalAlignment="Left" Margin="703,156,0,0" VerticalAlignment="Top" Width="80" Click="BtnDepenseVoyage_Click"/>
+        <Label Content="" Background="DarkGray" HorizontalAlignment="Left" Margin="0,413,0,0" VerticalAlignment="Top" Width="802" Height="38"/>
+        <DatePicker x:Name="txtDateDepartRecherche" HorizontalAlignment="Left" Height="25" Margin="153,155,0,0"  Text="" VerticalAlignment="Top" Width="181"/>
+        <DatePicker x:Name="txtDateArriveRecherche" HorizontalAlignment="Left" Height="25" Margin="455,155,0,0"  Text="" VerticalAlignment="Top" Width="181"/>
+        <Label Content="Date départ" HorizontalAlignment="Left" Margin="14,154,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label Content="Date départ" HorizontalAlignment="Left" Margin="359,154,0,0" VerticalAlignment="Top" Width="91"/>
+        <Button x:Name="BtnRechercher" Content="R" HorizontalAlignment="Left" Height="25" Margin="641,155,0,0" VerticalAlignment="Top" Width="24" Click="BtnRechercher_Click"/>
+
+    </Grid>
+</Window>

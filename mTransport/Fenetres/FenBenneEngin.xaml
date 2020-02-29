@@ -1,0 +1,44 @@
+﻿<Window x:Class="mTransport.Fenetres.FenBenneEngin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mTransport.Fenetres"
+        mc:Ignorable="d"
+        Title="mTransport" Height="413.9" Width="506" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,-1,-6,0" Height="355" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="499*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Benne engin" FontWeight="Bold" Foreground="White" Background="DarkGoldenrod" Height="25" VerticalAlignment="Top"/>
+        <Label Content="Matricule" HorizontalAlignment="Left" Height="25" Margin="28,42,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Marque" HorizontalAlignment="Left" Height="25" Margin="28,65,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Année achat" HorizontalAlignment="Left" Height="25" Margin="28,87,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Capacité" HorizontalAlignment="Left" Height="25" Margin="28,110,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Type Benne" HorizontalAlignment="Left" Height="26" Margin="28,133,0,0" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txtMatricule" HorizontalAlignment="Left" Height="20" Margin="164,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtMarque" HorizontalAlignment="Left" Height="20" Margin="164,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtAnneeAchat" HorizontalAlignment="Left" Height="20" Margin="164,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="txtCapacite" HorizontalAlignment="Left" Height="20" Margin="164,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <ComboBox x:Name="cmbTypeBenne" DisplayMemberPath="Libelle" SelectedValue="Id" HorizontalAlignment="Left" Height="20" Margin="164,138,0,0" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="BtnNouveau" Content="Nouveau" HorizontalAlignment="Left" Height="20" Margin="399,41,0,0" VerticalAlignment="Top" Width="80" Click="BtnNouveau_Click"/>
+        <Button x:Name="BtnValider" Content="Valider" HorizontalAlignment="Left" Height="20" Margin="399,63,0,0" VerticalAlignment="Top" Width="80" Click="BtnValider_Click"/>
+        <Button x:Name="BtnModifier" Content="Modifier" HorizontalAlignment="Left" Height="20" Margin="399,85,0,0" VerticalAlignment="Top" Width="80" Click="BtnModifier_Click"/>
+        <Button x:Name="BtnAnnuler" Content="Annuler" HorizontalAlignment="Left" Height="20" Margin="399,107,0,0" VerticalAlignment="Top" Width="80" Click="BtnAnnuler_Click"/>
+        <Button x:Name="BtnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Height="20" Margin="399,129,0,0" VerticalAlignment="Top" Width="80" Click="BtnSupprimer_Click"/>
+        <Button x:Name="BtnImprimer"  Content="Imprimer" HorizontalAlignment="Left" Height="20" Margin="399,151,0,0" VerticalAlignment="Top" Width="80" Click="BtnImprimer_Click"/>
+        <Label Content="" Background="DarkGray" HorizontalAlignment="Left" Height="30" Margin="0,358,0,-31" VerticalAlignment="Top" Width="499" RenderTransformOrigin="0.5,0.5"/>
+        <DataGrid x:Name="TabBenneEngin" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" Height="155" Margin="5,190,0,0" VerticalAlignment="Top" Width="480" SelectionChanged="TabBenneEngin_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="N°" Width="30" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Matricule" Width="*" Binding="{Binding Matricule}"/>
+                <DataGridTextColumn Header="Marque" Width="*" Binding="{Binding Marque}"/>
+                <DataGridTextColumn Header="Capacite" Width="*" Binding="{Binding Capacite}"/>
+                <DataGridTextColumn Header="Année achat" Width="*" Binding="{Binding AnneeAchat}"/>
+                <DataGridTextColumn Header="Type benne" Width="*" Binding="{Binding TypeBenneEngin.Libelle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

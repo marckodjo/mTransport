@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="590c8ca54ded44c7950d29de5aada1d1" Name="Diagram1">
+        <EntityTypeShape EntityType="mtransportModel.AffectationVehicule" Width="1.5" PointX="7.5" PointY="4.125" />
+        <EntityTypeShape EntityType="mtransportModel.BenneEngin" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="mtransportModel.Chauffeur" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="mtransportModel.Depense" Width="1.5" PointX="9.75" PointY="8.375" />
+        <EntityTypeShape EntityType="mtransportModel.DetailsDroitAcce" Width="1.5" PointX="14.25" PointY="16.375" />
+        <EntityTypeShape EntityType="mtransportModel.DroitAcce" Width="1.5" PointX="12" PointY="14.75" />
+        <EntityTypeShape EntityType="mtransportModel.Formulaire" Width="1.5" PointX="9.75" PointY="14.75" />
+        <EntityTypeShape EntityType="mtransportModel.HistoriquePanne" Width="1.5" PointX="7.5" PointY="14.75" />
+        <EntityTypeShape EntityType="mtransportModel.journal" Width="1.5" PointX="14.25" PointY="22.875" />
+        <EntityTypeShape EntityType="mtransportModel.Materiel" Width="1.5" PointX="5.25" PointY="14.75" />
+        <EntityTypeShape EntityType="mtransportModel.Menu" Width="1.5" PointX="12" PointY="17.875" />
+        <EntityTypeShape EntityType="mtransportModel.Profil" Width="1.5" PointX="9.75" PointY="18.75" />
+        <EntityTypeShape EntityType="mtransportModel.RaisonSociale" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="mtransportModel.TeteEngin" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="mtransportModel.TypeBenneEngin" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="mtransportModel.TypeDepense" Width="1.5" PointX="7.5" PointY="12.125" />
+        <EntityTypeShape EntityType="mtransportModel.Utilisateur" Width="1.5" PointX="12" PointY="21.875" />
+        <EntityTypeShape EntityType="mtransportModel.Vehicule" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="mtransportModel.Voyage" Width="1.5" PointX="7.5" PointY="8.125" />
+        <AssociationConnector Association="mtransportModel.fk_ChauffeurAffectation" />
+        <AssociationConnector Association="mtransportModel.fk_VehiculeAffectation" />
+        <AssociationConnector Association="mtransportModel.fk_BenneEngins" />
+        <AssociationConnector Association="mtransportModel.fk_TypeBenneEngins" />
+        <AssociationConnector Association="mtransportModel.fk_Depense_HistoriquePanne" />
+        <AssociationConnector Association="mtransportModel.fk_Depense_Voyage" />
+        <AssociationConnector Association="mtransportModel.fkTypeDepense_Depense" />
+        <AssociationConnector Association="mtransportModel.fk_DetailsDroitAcces_DroitAcces" />
+        <AssociationConnector Association="mtransportModel.fk_DetailsDroitAcces_menu" />
+        <AssociationConnector Association="mtransportModel.fk_DroitAcces_Formulaire" />
+        <AssociationConnector Association="mtransportModel.fk_DroitAcces_Profil" />
+        <AssociationConnector Association="mtransportModel.fk_menu_fomulaire" />
+        <AssociationConnector Association="mtransportModel.fk_Materiel" />
+        <AssociationConnector Association="mtransportModel.FK_journal_utilisateur" />
+        <AssociationConnector Association="mtransportModel.fk_Profil_Utilsateur" />
+        <AssociationConnector Association="mtransportModel.fk_TeteEngins" />
+        <AssociationConnector Association="mtransportModel.fk_Voyage_Vehicule" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

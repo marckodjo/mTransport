@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/28/2019 17:50:54" ReportInfo.Modified="08/02/2019 10:25:13" ReportInfo.CreatorVersion="2015.2.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+       
+
+    private void Page1_StartPage(object sender, EventArgs e)
+    {
+       Picture1.Image = ((System.Drawing.Bitmap)Report.GetParameterValue(&quot;Logo&quot;));
+    }
+  }
+}
+</ScriptText>
+  <Dictionary/>
+  <ReportPage Name="Page1" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="141.75">
+      <TextObject Name="Text1" Left="519.75" Width="198.45" Height="141.75" Text="&#13;&#10;Adresse : [rs.Adresse]&#13;&#10;B.P  : [rs.BoitePostale]&#13;&#10;Qte-Ville  : [rs.Quartier]-[rs.Ville]&#13;&#10;Téléphone1  : [rs.Telephone1]&#13;&#10;Téléphone2  : [rs.Telephone2]&#13;&#10;Fax   : [rs.Fax]&#13;&#10;Email   : [rs.Email]&#13;&#10;Site web  : [rs.Siteweb]&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;" Font="Arial, 8pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="28.35" Top="9.45" Width="85.05" Height="103.95"/>
+      <TextObject Name="Text2" Left="113.4" Top="47.25" Width="406.35" Height="18.9" Text="[rs.NomSociete]" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+  </ReportPage>
+</Report>

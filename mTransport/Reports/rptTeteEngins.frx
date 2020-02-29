@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<inherited BaseReport="EnteteEtat.frx" ScriptLanguage="CSharp" ReportInfo.Created="07/28/2019 17:50:54" ReportInfo.Modified="07/29/2019 09:33:44" ReportInfo.CreatorVersion="2015.2.0.0">
+  <Dictionary/>
+  <inherited Name="Page1">
+    <inherited Name="ReportTitle1">
+      <inherited Name="Text1"/>
+      <inherited Name="Picture1" Left="0" Top="0"/>
+      <inherited Name="Text2"/>
+    </inherited>
+    <PageHeaderBand Name="PageHeader1" ZOrder="-1" Top="145.08" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Left="-9.45" Width="727.65" Height="28.35" Text="[ParamTitre]" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="176.77" Width="718.2" Height="15.12">
+      <TextObject Name="Text12" Left="567" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Nb place" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text7" Left="37.8" Width="113.4" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Matricule" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text11" Left="463.05" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Année achat" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text10" Left="359.1" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="NoChassis" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="255.15" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Modèle" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text9" Left="151.2" Width="103.95" Height="15.12" Border.Lines="All" Fill.Color="Gainsboro" Text="Marque" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" ZOrder="0" Top="195.22" Width="718.2" Height="15.12">
+      <TextObject Name="Text6" Left="255.15" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.Modele]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text4" Left="37.8" Width="113.4" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.Matricule]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text5" Left="151.2" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.Marque]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="359.1" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.NoChassis]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text14" Left="463.05" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.AnneeAchat]" HorzAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text15" Left="567" Width="103.95" Height="15.12" Border.Lines="All" Text="[LstTeteEngin.NbrePlaces]" HorzAlign="Center" Font="Arial, 8pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" ZOrder="-1" Top="213.67" Width="718.2" Height="18.9">
+      <TextObject Name="Text16" Left="576.45" Width="141.75" Height="18.9" Text="[Date]" HorzAlign="Center" Font="Arial, 7pt"/>
+    </PageFooterBand>
+  </inherited>
+</inherited>
